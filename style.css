@@ -1,0 +1,475 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Fuente global y colores */
+  body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fdfdfd;
+  }
+  
+  /* Header */
+  header {
+    background: #ffffff;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header h1 {
+    font-size: 1.8em;
+    color: #111;
+  }
+  .contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }  
+  .social-icons a {
+    margin-left: 15px;
+    color: #333;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+  }
+  .social-icons a:hover {
+    color: #0077b5;
+  }
+  
+  /* Navegación */
+  nav {
+    margin-top: 10px;
+    position: relative;
+  }
+  nav ul {
+    list-style: none;
+  }
+  nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  nav ul li a:hover {
+    color: #0077b5;
+  }
+  #nav-toggle {
+    display: none;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  #nav-toggle:focus {
+    outline: none;
+  }
+  
+  /* Secciones generales */
+  section {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  section h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #111;
+    border-bottom: 2px solid #0077b5;
+    display: inline-block;
+  }
+  
+  /* Sobre mí */
+  .sobre-mi-contenedor {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .sobre-mi-contenedor .foto {
+    flex: 1 1 250px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .profile-pic {
+    max-width: 250px;
+    height: 250px;
+    border-radius: 500%;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  .sobre-mi-contenedor .descripcion {
+    flex: 2 1 300px;
+    padding: 0 20px;
+  }
+  .sobre-mi-contenedor .descripcion p {
+    margin-bottom: 15px;
+  }
+  
+  /* Skills */
+  .skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .skill {
+    display: flex;
+    flex-direction: column;
+  }
+  .skill-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  #skills {
+    position: absolute;
+    top: 142px; /* Alinea con el inicio de 'Sobre mí' */
+    right: 100px; /* Ajusta según prefieras */
+    width: 280px;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
+  
+  /* Opcional: en pantallas grandes, se deja espacio para evitar que el contenido se sobreponga */
+  @media (min-width: 1024px) {
+    main, 
+    section:not(#skills) {
+      margin-right: 320px; /* Ajusta según el ancho del sidebar + margen deseado */
+    }
+  }
+  .progress {
+    background: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 20px;
+  }
+  .progress-fill {
+    background: #0077b5;
+    height: 100%;
+    color: #fff;
+    text-align: right;
+    padding-right: 5px;
+    line-height: 20px;
+    font-size: 0.9em;
+    transition: width 0.5s ease;
+  }
+  
+  /* Experiencia */
+  .job {
+    margin-bottom: 40px;
+  }
+  .job h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #0077b5;
+  }
+  .job .duracion {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  .job p {
+    text-align: justify;
+  }
+  
+  /* Proyectos */
+  .proyectos-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .proyecto-item {
+    background: #fafafa;
+    border: 1px solid #eee;
+    padding: 20px;
+    flex: 1 1 250px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+  }
+  .proyecto-item:hover {
+    transform: translateY(-5px);
+  }
+  .proyecto-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #d4d4d4 !important;
+  }
+  .proyecto-item p {
+    margin-bottom: 10px;
+  }
+  .proyecto-item a {
+    color: #0077b5;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .proyecto-item a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Contacto */
+  .contacto-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  .contacto-form {
+    flex: 2 1 300px;
+  }
+  .contacto-info {
+    flex: 1 1 200px;
+    font-size: 0.95em;
+  }
+  .contacto-info p {
+    margin-bottom: 10px;
+  }
+  .field-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  .field-group label {
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  .field-group input,
+  .field-group textarea {
+    padding: 8px;
+    font: inherit;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .field-group input:focus,
+  .field-group textarea:focus {
+    outline: none;
+    border-color: #0077b5;
+  }
+  button[type="submit"] {
+    background: #0077b5;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  button[type="submit"]:hover {
+    background: #005f87;
+  }
+  .success-msg {
+    display: none;
+    margin-top: 15px;
+    color: #28a745;
+    font-weight: 600;
+  }
+  
+  /* Redes */
+  #redes p {
+    font-size: 1.1em;
+    text-align: center;
+  }
+  #redes a {
+    text-decoration: none;
+    color: #0077b5;
+    font-weight: 600;
+    margin: 0 10px;
+  }
+  #redes a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Media Queries */
+  @media(max-width: 768px) {
+    nav ul {
+      display: none;
+      flex-direction: column;
+      background: #fff;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    nav ul li {
+      display: block;
+      margin: 10px 0;
+    }
+    #nav-toggle {
+      display: inline-block;
+      float: right;
+      margin-top: 5px;
+    }
+    .sobre-mi-contenedor {
+      flex-direction: column;
+    }
+    .sobre-mi-contenedor .descripcion {
+      padding: 0;
+    }
+    .proyectos-lista {
+      flex-direction: column;
+    }
+    .contacto-contenedor {
+      flex-direction: column;
+    }
+  }
+  /* Estilo card para las secciones Sobre mí y Experiencia */
+  #sobre-mi, #experiencia {
+    background: #2d2d2d; /* Fondo oscuro */
+    padding: 20px;
+    border: 1px solid #3c3c3c;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    margin-bottom: 30px;
+  }
+  
+.contenido {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-right: 100px; /* Espacio reservado para el sidebar */
+}
+/* Para pantallas pequeñas, se coloca el sidebar de forma estática */
+@media (max-width: 1024px) {
+  #skills {
+    position: static;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* 3. Tarjetas de Experiencia: envolver cada experiencia en una "sub-card" */
+/* Aplica un fondo y una separación en la sección de experiencia */
+#experiencia {
+  padding: 20px;
+  border: 1px solid #3c3c3c;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+}
+
+/* Nuevo layout grid para las tarjetas de experiencia */
+#experiencia .jobs-container {
+  display: grid;
+  grid-template-columns: 1fr; /* Una columna por defecto */
+  gap: 20px;
+}
+
+/* En pantallas medianas y grandes, se muestran dos columnas */
+@media (min-width: 768px) {
+  #experiencia .jobs-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Cada tarjeta de experiencia */
+.job {
+  background: #fff;
+  padding: 15px 20px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+/* Tema VS Code Dark */
+body {
+  background: #1e1e1e;
+  color: #d4d4d4;
+}
+
+header {
+  background: #252526;
+  border-bottom: 1px solid #3c3c3c;
+}
+
+header h1 {
+  color: #d4d4d4;
+}
+
+nav ul li a {
+  color: #d4d4d4;
+}
+nav ul li a:hover {
+  color: #007acc;
+}
+
+section {
+  background: #252526;
+  border: 1px solid #3c3c3c;
+  /* Quita el padding extra si se requiere, ya que usas cards */
+  padding: 20px;
+  border-radius: 8px;
+}
+section h2 {
+  color: #d4d4d4;
+  border-bottom-color: #007acc;
+}
+
+/* Tarjetas (Sobre mí, Experiencia, Proyectos, etc.) */
+.job,
+.proyecto-item,
+.contacto-contenedor {
+  background: #2d2d2d;
+  border: 1px solid #3c3c3c;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Texto de las descripciones */
+.sobre-mi-contenedor .descripcion p,
+.job p,
+.proyecto-item p,
+.contacto-info p {
+  color: #d4d4d4 !important;
+}
+
+/* Sidebar de Skills (Hard y Soft) */
+#skills {
+  background: #2d2d2d;
+  border: 1px solid #3c3c3c;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  color: #d4d4d4;
+}
+
+/* Barras de progreso */
+.progress {
+  background: #3c3c3c;
+}
+.progress-fill {
+  background: #007acc;
+  color: #fff;
+}
+
+/* Enlaces */
+a {
+  color: #007acc;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Social icons */
+.social-icons a {
+  color: #d4d4d4;
+}
+.social-icons a:hover {
+  color: #007acc;
+}
