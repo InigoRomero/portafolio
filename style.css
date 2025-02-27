@@ -473,3 +473,8 @@ a:hover {
 .social-icons a:hover {
   color: #007acc;
 }
+@media (max-width: 768px) {
+  .contenido {
+    padding-right: 20px !important;
+  }
+}
